@@ -1,0 +1,694 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<style type="text/css">
+/*
+// Copyright 2021 The Connell Authors. All rights reserved.
+// Use of this source code is governed by a BSD-style license that can be
+// found in the LICENSE file.
+
+*/
+		:root, :host{
+		--happy-tunez-bgColor:#06181f;\
+		--happy-tunez-Color:#31e8ff;
+	}
+		*{
+			margin: 0;
+			padding: 0;
+		}
+#a{
+	z-index: 1;
+	position: absolute;
+	top: 3px;
+	left: 3px;
+	background: transparent;
+	border: none;
+	width: 5px;
+	height: 5px;
+}
+body{
+		background:#06181f;
+	color:#31e8ff;
+}
+.h2{
+	text-align: center;position: relative;bottom: 25px;
+	text-shadow: 
+     0 0 7px #fff,
+     0 0 10px #fff,
+     0 0 21px #fff,
+     0 0 42px #0fa,
+     0 0 82px #0fa,
+     0 0 92px #0fa,
+     0 0 102px #0fa,
+     0 0 151px #0fa;
+
+}
+
+.searchBoxDiv{
+	width: 70%;
+	margin: auto;
+	
+}
+#searchBox{
+	box-shadow: 2px 3px 4px rgba(0, 0, 0, 0.4),
+	-2px -3px 4px rgba(255, 255, 255, 0.2);
+	color: white;
+  border: none;
+  background: none;
+  border-top-left-radius: 60px;
+   border-bottom-left-radius: 60px;
+  width: 100%;
+  height: 45px;
+  z-index: 20;
+}
+#searchBtn{
+	color: lightgreen;
+box-shadow: 2px 3px 4px rgba(0, 0, 0, 0.4),
+	-2px -3px 4px rgba(255, 255, 255, 0.1);
+	
+  border: none;
+  background: none;
+  border-top-right-radius: 60px;
+   border-bottom-right-radius: 60px;
+  height: 45px;
+float: right;
+position: absolute;
+top: 70px;
+}
+::placeholder{
+	font-size: 15px;
+	color: lightgreen;
+	text-align: center;
+}
+#peach{
+	margin: auto;
+	height: 120px;
+	box-shadow: 2px 3px 4px rgba(0, 0, 0, 0.4),
+	-2px -3px 4px rgba(255, 255, 255, 0.2);
+	width: 72%;
+}
+#btn{
+	background: transparent;
+
+	border: none;
+	color: lightgreen;
+	width: 100%;
+	height: 40px;
+}
+.t{
+
+
+	
+		transition: stroke-dashoffset 2s linear;
+	stroke: lightgreen;
+	stroke-dasharray: 0;
+		stroke-dashoffset:0;
+
+}
+
+.t:hover{
+	
+	stroke-dasharray: 45;
+		stroke-dashoffset:45;
+		
+		stroke:gold;
+		
+}
+.auto{
+ margin: auto;
+	height: 120px;
+	box-shadow: 2px 3px 4px rgba(0, 0, 0, 0.4),
+	-2px -3px 4px rgba(255, 255, 255, 0.2);
+	width: 72%;
+}
+#nav{
+	transition: opacity 2s ease-in;
+	display: none;
+	position: fixed;
+  background: black;
+  opacity: 0;
+  z-index:1;
+  backdrop-filter:blur(15px);
+  width: 70%;
+  height:320px;
+}
+#b11, a{
+    font-size: 20px;
+    font-weight: bolder;
+	  backdrop-filter:blur(15px);
+	text-align: left;
+   width: 100%;
+   height: 40px;
+   color: lightgreen;
+   border: none;
+   background: transparent;
+   list-style-type: none;
+   text-decoration: none;
+   cursor: pointer;
+   
+}
+#b11:hover{
+	background: transparent;
+}
+#happyT{
+
+	display: block;
+}
+
+
+	</style>
+	<title></title>
+</head>
+<!--
+// Copyright 2021 The Connell Authors. All rights reserved.
+// Use of this source code is governed by a BSD-style license that can be
+// found in the LICENSE file.
+
+-->
+<body onscroll="move()">
+
+	<!--happy tunez
+  This code was originally written by the connell software AS
+  -->
+ <div id="happyT">
+ <svg width="100%" height="40">
+ 	<rect x="0" y="0" width="100%" height="55px" fill="transparent" fill-opacity="0.8"/>
+
+ </svg>
+ <div id="mdiv">
+ <h2 class="h2">Happy Tunez</h2>
+</div>
+	<button id="a" onclick="ss();">
+		<svg width="23" height="50">
+ 	<g id="rect">
+ 		<rect  x="0" y="20" width="20px" height="3px" fill="#31e8ff" fill-opacity="0.8" />
+ 		<rect x="0" y="25" width="20px" height="3px" fill="#31e8ff" fill-opacity="0.8"/>
+ 		<rect x="0" y="30" width="20px" height="3px" fill="#31e8ff" fill-opacity="0.8"/>
+ 	</g>
+ </svg>
+	</button>
+	<div id="nav">
+		<br>
+		<button id="b11" style="float: right;color: red" onclick="closee();">&times</button>
+		<button id="b11">Happy Tunez</button>
+		<button id="b11"><a href="Profile.html">Profile<a></button><br>
+		<button id="b11">Trending</button><br>
+		<button id="b11"><a href="tophits.html">Top Hits</a></button><br>
+    <button id="b11"><a href="404.html">Charts</a></button><br>
+		<button id="b11"><a href="achievement.html">Achievements</a></button><br>
+		<button id="b11">Sign Out</button><br>
+	</div>
+ <div class="searchBoxDiv">
+ 	<div>
+    <form action="https://www.duckduckgo.com/search">
+ 		<input id="searchBox"type="text" name="" placeholder="Search Your Favorite Music"><button id="searchBtn">search</button>
+ 		</form>
+ 	</div>
+ </div>
+
+
+<div class="trend">
+		<h1 style="margin: 3px; color: lightgreen;">Trending...</h1>
+		
+		
+        <img id="i1"style="margin: 10px;" src="ibaby.png" width="200px" height="120px" />
+        <img id="i1"style="margin: 10px;" src="rodeo.png"width="200px" height="120px"/>
+        <img id="i1"style="margin: 10px;"src="butter.png"width="200px" height="120px"/>
+        <img id="i1"style="margin: 10px;"src="levi.png"width="200px" height="120px"/>
+         <img id="i1"style="margin: 10px;"src="sun.png"width="200px" height="120px"/>
+          <img class="i" id="i1"style="margin: 10px;"src="more.png"width="150px" height="120px" onclick="more()" /><br>
+
+        </div>
+
+
+  <div id="Audios">
+  	<audio id="audio" src="#" autoplay></audio>
+  	<div id="peach">
+  		<p id="name" style="color: lightgreen; text-align: center;" contenteditable>Peaches by justin bieiber</p>
+  		<button id="btn" onclick="pl();">
+<svg width="100" height="50">
+	      <rect class="t" x="10" y="12" width="50" height="30" fill="transparent" />
+  			<text x="20" y="30" fill="lightgreen">play</text>
+</svg>
+  		</button>
+  		<div id="userDetails">
+  			
+  		</div>
+  	</div>
+  	<br>
+<div id="hellcats" class="auto">
+  		<p id="name" style="color: lightgreen; text-align: center;" contenteditable>Only the family, lilDurk</p>
+  		<button id="btn" onclick="hp();"><svg width="100" height="50">
+	      <rect class="t" x="10" y="12" width="50" height="30" fill="transparent" />
+  			<text x="20" y="30" fill="lightgreen">play</text>
+</svg></button>
+  		<div id="userDetails">
+  			
+  		</div>
+  		
+  	</div>
+  	<br>
+<div id="beauty" class="auto">
+  		<p id="name" style="color: lightgreen; text-align: center;" contenteditable>Beautiful Mistakes
+  		</p>
+  		<button id="btn" onclick="bp();"><svg width="100" height="50">
+	      <rect class="t" x="10" y="12" width="50" height="30" fill="transparent" />
+  			<text x="20" y="30" fill="lightgreen">play</text>
+</svg></button>
+  		<div id="userDetails">
+  			
+  		</div>
+  	</div>
+<br>
+<div id="Finese" class="auto">
+  		<p id="name" id="audio" style="color: lightgreen; text-align: center;" contenteditable> Finese -Lil Durk
+  		</p>
+  		<button id="btn" onclick="fp();"><svg width="100" height="50">
+	      <rect class="t" x="10" y="12" width="50" height="30" fill="transparent" />
+  			<text x="20" y="30" fill="lightgreen">play</text>
+</svg></button>
+  		<div id="userDetails">
+  			
+  		</div>
+  	</div>
+<br>
+<div id="coco" id="audio" class="auto">
+  		<p id="name" style="color: lightgreen; text-align: center;" contenteditable>Coco
+  		</p>
+  		<button id="btn" onclick="cp();"><svg width="100" height="50">
+	      <rect class="t" x="10" y="12" width="50" height="30" fill="transparent" />
+  			<text x="20" y="30" fill="lightgreen">play</text>
+</svg></button>
+  		<div id="userDetails">
+  			
+  		</div>
+  	</div>
+<br>
+<div id="company" class="auto">
+  		<p id="name" style="color: lightgreen; text-align: center;" contenteditable> Company
+  		</p>
+  		<button id="btn" onclick="cop();"><svg width="100" height="50">
+	      <rect class="t" x="10" y="12" width="50" height="30" fill="transparent" />
+  			<text x="20" y="30" fill="lightgreen">play</text>
+</svg></button>
+  		<div id="userDetails">
+  			
+  		</div>
+  	</div>
+<br>
+<div id="story" class="auto">
+  		<p id="name" style="color: lightgreen; text-align: center;" contenteditable>3 2 1, 24k golden
+  		</p>
+  		<button id="btn" onclick="sp();"><svg width="100" height="50">
+	      <rect class="t" x="10" y="12" width="50" height="30" fill="transparent" />
+  			<text x="20" y="30" fill="lightgreen">play</text>
+</svg></button>
+  		<div id="userDetails">
+  			
+  		</div>
+  	</div>
+<br>
+
+<div id="sl" class="auto">
+  		<p id="name" style="color: lightgreen; text-align: center;" contenteditable>Sharing Locations
+  		</p>
+  		<button id="btn" onclick="slp();"><svg width="100" height="50">
+	      <rect class="t" x="10" y="12" width="50" height="30" fill="transparent" />
+  			<text x="20" y="30" fill="lightgreen">play</text>
+</svg></button>
+  		<div id="userDetails">
+  			
+  		</div>
+  	</div>
+<br>
+<div id="real" class="auto">
+  		<p id="name" style="color: lightgreen; text-align: center;" contenteditable>Real As It Gets
+  		</p>
+  		<button id="btn" onclick="rp();"><svg width="100" height="50">
+	      <rect class="t" x="10" y="12" width="50" height="30" fill="transparent" />
+  			<text x="20" y="30" fill="lightgreen">play</text>
+</svg></button>
+  		<div id="userDetails">
+  			
+  		</div>
+  	</div>
+<br>
+<div id="onME" class="auto">
+  		<p id="name" style="color: lightgreen; text-align: center;" contenteditable> On Me
+  		</p>
+  		<button id="btn" onclick="op();"><svg width="100" height="50">
+	      <rect class="t" x="10" y="12" width="50" height="30" fill="transparent" />
+  			<text x="20" y="30" fill="lightgreen">play</text>
+</svg></button>
+  		<div id="userDetails">
+  			
+  		</div>
+  	</div>
+<br>
+<div id="door" class="auto">
+  		<p id="name" style="color: lightgreen; text-align: center;" contenteditable>Leave the door open- palk silk sonic, bruno mars
+  		</p>
+  		<button id="btn" onclick="dp();"><svg width="100" height="50">
+	      <rect class="t" x="10" y="12" width="50" height="30" fill="transparent" />
+  			<text x="20" y="30" fill="lightgreen">play</text>
+</svg></button>
+  		<div id="userDetails">
+  			
+  		</div>
+  	</div>
+<br>
+<div id="crybaby" class="auto">
+  		<p id="name" style="color: lightgreen; text-align: center;" contenteditable>Crybaby- Dababy ft Mega Thee Stallion
+  		</p>
+  		<button id="btn" onclick="cbp();"><svg width="100" height="50">
+	      <rect class="t" x="10" y="12" width="50" height="30" fill="transparent" />
+  			<text x="20" y="30" fill="lightgreen">play</text>
+</svg></button>
+  		<div id="userDetails">
+  			
+  		</div>
+  	</div>
+<br>
+<div id="Wn" class="auto">
+  		<p id="name" style="color: lightgreen; text-align: center;" contenteditable>Wants and Needs - Drake</p>
+  		<button id="btn" onclick="wp();"><svg width="100" height="50">
+	      <rect class="t" x="10" y="12" width="50" height="30" fill="transparent" />
+  			<text x="20" y="30" fill="lightgreen">play</text>
+</svg></button>
+  		<div id="userDetails">
+  			
+  		</div>
+  	</div>
+<br>
+<div id="whatsn" class="auto">
+  		<p id="name" style="color: lightgreen; text-align: center;" contenteditable>Whats Next- Drake
+  		</p>
+  		<button id="btn" onclick="wnp();"><svg width="100" height="50">
+	      <rect class="t" x="10" y="12" width="50" height="30" fill="transparent" />
+  			<text x="20" y="30" fill="lightgreen">play</text>
+</svg></button>
+  		<div id="userDetails">
+  			
+  		</div>
+  	</div>
+<br>
+<div id="laugh" class="auto">
+  		<p id="name" style="color: lightgreen; text-align: center;" contenteditable>Laugh Now Cry Later
+  		</p>
+  		<button id="btn" onclick="lgp();"><svg width="100" height="50">
+	      <rect class="t" x="10" y="12" width="50" height="30" fill="transparent" />
+  			<text x="20" y="30" fill="lightgreen">play</text>
+</svg></button>
+  		<div id="userDetails">
+  			
+  		</div>
+  	</div>
+<br>
+<div id="iby" class="auto">
+      <p id="name" style="color: lightgreen; text-align: center;" contenteditable>Industry Baby
+      </p>
+      <button id="btn" onclick="ib();"><svg width="100" height="50">
+        <rect class="t" x="10" y="12" width="50" height="30" fill="transparent" />
+        <text x="20" y="30" fill="lightgreen">play</text>
+</svg></button>
+      <div id="userDetails">
+        
+      </div>
+    </div>
+<br>
+<div id="WantsNeed" class="auto">
+      <p id="name" style="color: lightgreen; text-align: center;" contenteditable>Need to know 
+      </p>
+      <button id="btn" onclick="nk();"><svg width="100" height="50">
+        <rect class="t" x="10" y="12" width="50" height="30" fill="transparent" />
+        <text x="20" y="30" fill="lightgreen">play</text>
+</svg></button>
+      <div id="userDetails">
+        
+      </div>
+    </div>
+<br>
+<div id="sunn" class="auto">
+      <p id="name" style="color: lightgreen; text-align: center;" contenteditable>Sun goes down
+      </p>
+      <button id="btn" onclick="sgd();"><svg width="100" height="50">
+        <rect class="t" x="10" y="12" width="50" height="30" fill="transparent" />
+        <text x="20" y="30" fill="lightgreen">play</text>
+</svg></button>
+      <div id="userDetails">
+        
+      </div>
+    </div>
+<br>
+  <!--//The Connell Authors, All rights reserved-->
+<happy-music ptext="Die young by roddy rich" click="dy();"></happy-music>
+<br>
+  </div>
+</div>
+  <script type="text/javascript">
+ 
+   window.onload = function load() {
+     // body...
+     alert("Note This Webpage is still under construction");
+   };
+
+
+  	var a = document.getElementById("audio");
+    function pl() {
+    	// body...
+    	a.src="peaches.mp4";
+
+    }
+     function hp() {
+    	// body...
+    	a.src="hellcats.mp3";
+
+    }
+       function bp() {
+    	// body...
+    	a.src="beautiful.mp3";
+
+    }
+       function fp() {
+    	// body...
+    	a.src="Finese.mp4";
+
+    }
+       function cp() {
+    	// body...
+    	a.src="coco.mp4";
+
+    }
+       function cop() {
+    	// body...
+    	a.src="company.mp3";
+
+    }
+       function sp() {
+    	// body...
+    	a.src="story.mp4";
+
+    }
+       function slp() {
+    	// body...
+    	a.src="sharingL.mp4";
+
+    }
+       function rp() {
+    	// body...
+    	a.src="realAsItGet.mp3";
+
+    }
+       function op() {
+    	// body...
+    	a.src="onMe.mp3";
+
+    }
+       function dp() {
+    	// body...
+    	a.src="door.mp4";
+
+    }
+       function cbp() {
+    	// body...
+    	a.src="crybaby.mp3";
+
+    }
+       function wp() {
+    	// body...
+    	a.src="WantsNeed.mp4";
+
+    }
+       function wnp() {
+    	// body...
+    	a.src="WhatsNext.mp4";
+
+    }
+       function lgp() {
+    	// body...
+    	a.src="laughnow.mp4";
+
+    }
+       function ib() {
+      // body...
+      a.src="ibaby.mp4";
+
+    }
+       function nk() {
+      // body...
+      a.src="need.mp3";
+
+    }
+       function sgd() {
+      // body...
+      a.src="sung.mp4";
+
+    }
+       function dy() {
+      // body...
+      a.src="dieyoung.mp4";
+
+    }
+
+    function move() {
+    	// body...
+       var div = document.getElementById("mdiv");
+       var sdiv = document.getElementById("searchBtn");
+       div.style.position="fixed";
+       div.top="300px";
+       sdiv.style.position="absolute";
+       sdiv.style.top="43px";
+
+    }
+
+    function ss() {
+    	var divs = document.getElementById("nav");
+    	divs.style.display="block";
+    	divs.style.opacity="0.8";
+
+    	// body...
+    }
+     function closee() {
+    	var divss = document.getElementById("nav");
+    	divss.style.opacity=0;
+
+    	// body...
+    }
+
+  
+  </script>
+
+  <script type="text/javascript">
+    <!--//The Connell Authors, All rights reserved-->
+    class happyTunez extends HTMLElement{
+  constructor(){
+    super();
+  }
+  static get observedAttributes(){
+    return ['ptext','click'];
+  }
+  get ptext(){
+    return this.getAttribute('ptext');
+  }
+  get click(){
+    return this.getAttribute('click');
+  }
+   set ptext(newptext){
+    this.setAttribute('ptext',newptext);
+  }
+   set click(newclick){
+    this.setAttribute('click',newclick);
+  }
+  connectedCallback(){
+    var shadow = this.attachShadow({mode:'open'});
+    var auto = document.createElement('div');
+    auto.setAttribute('class','auto');
+    var ptext = document.createElement('p');
+    ptext.innerHTML= `${this.ptext}`;
+    ptext.setAttribute('id','name');
+    var click = document.createElement('button');
+    click.setAttribute('id','btn');
+    click.setAttribute('onclick',`${this.click}`);
+    var svg = document.createElement('svg');
+    var rect = document.createElement('rect');
+    rect.setAttribute('class','t');
+    var text = document.createElement('text');
+    text.textContent = 'play';
+    const style = document.createElement('style');
+    style.textContent = `
+       .auto{
+  margin: auto;
+  height: 120px;
+  box-shadow: 2px 3px 4px rgba(0, 0, 0, 0.4),
+  -2px -3px 4px rgba(255, 255, 255, 0.2);
+  width: 72%;
+}
+      #name{
+        color: lightgreen; 
+        text-align: center
+      }
+      #btn{
+        background: transparent;
+
+  border: 1px solid lightgreen;
+  color: lightgreen;
+  width: 100%;
+  height: 40px;
+      }
+      svg{
+        width:100;
+        height:50;
+      }
+  .t{
+   x:10;
+   y:12;
+   width:50;
+   height:30;
+  fill:transparent;
+     transition: stroke-dashoffset 2s linear;
+  stroke: lightgreen;
+  stroke-dasharray: 0;
+    stroke-dashoffset:0;
+  }
+ .t:hover{
+  
+  stroke-dasharray: 45;
+    stroke-dashoffset:45;
+    
+    stroke:gold;
+    
+}
+    `;
+    shadow.appendChild(style);
+    shadow.appendChild(auto);
+    auto.appendChild(ptext);
+    auto.appendChild(click);
+    click.appendChild(svg);
+    svg.appendChild(rect);
+    svg.appendChild(text);
+  }
+
+   attributeChangeCallback(name,oldval,newval){
+    switch(name){
+      case 'name':
+       if (oldval != newval)
+        this.ptext = newval;
+      break;
+      if (oldval != newval)
+        this.click = newval;
+      break;
+    }
+
+   }
+
+  }
+  customElements.define("happy-music", happyTunez);
+  // Copyright 2021 The Connell Authors. All rights reserved.
+// Use of this source code is governed by a BSD-style license that can be
+// found in the LICENSE file.
+  </script>
+</body>
+</html>

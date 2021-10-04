@@ -1,0 +1,139 @@
+<!--//The Connell Authors, All rights reserved
+// Copyright 2021 The Connell Authors. All rights reserved.
+// Use of this source code is governed by a BSD-style license that can be
+// found in the LICENSE file.
+//The Connell Authors, All rights reserved.
+-->
+
+<!DOCTYPE html>
+<html>
+	<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<head>
+	<style type="text/css">
+		body{
+			background: #000006;
+			color: darkorange;
+		}
+	</style>
+	<title>Achievement</title>
+</head>
+<body>
+	<achievement-back-button></achievement-back-button>
+   <achievement-default></achievement-default>
+
+
+  <script type="text/javascript">
+  	// Copyright 2021 The Connell Authors. All rights reserved.
+  	class defaultText extends HTMLElement{
+  		constructor(){
+  			super();
+  		}
+  		static get observedAttributes(){
+  			return ['head','text'];
+  		}
+  		get head(){
+  			return this.getAttribute('head');
+  		}
+  		get text(){
+  			return this.getAttribute('text');
+  		}
+  		set head(newhead){
+  			this.setAttribute('head',newhead);
+  		}
+  		set text(newText){
+  			this.setAttribute('text',newText);
+  		}
+
+  		connectedCallback(){
+  			var shadow = this.attachShadow({mode:'open'});
+  			var container = document.createElement('div');
+  			container.setAttribute('class','container');
+  			var head = document.createElement('h1');
+  			head.id ="dhead";
+  			head.innerHTML = `No Achievement`;
+  			var text = document.createElement('p');
+  			text.innerHTML = `Your achievement appears here`;
+  			text.id = "dtxt"
+            const style = document.createElement('style');
+            style.textContent=`
+              .container{
+              	text-align:center;
+
+              }
+            #dhead{
+            	color:grey;
+            	opacity:0.2;
+            }
+            `;
+            shadow.appendChild(style);
+            shadow.appendChild(container);
+            container.appendChild(head);
+            container.appendChild(text);
+  		}
+
+  		  attributeChangedCallback(heading,oldvalue,newvalue){
+            switch(heading){
+            	case 'head':
+            	     if (oldvalue != newvalue) 
+            	     	this.head = newvalue;
+            	     break;
+            	case 'text':
+            	     if (oldvalue != newvalue) 
+            	     	this.text = newvalue;
+            	     break;
+            }
+         }
+  	}
+   	customElements.define('achievement-default', defaultText);
+
+   	// Copyright 2021 The Connell Authors. All rights reserved.
+  	class backButton extends HTMLElement{
+  		constructor(){
+  			super();
+  		}
+  		static get observedAttributes(){
+  			return ['btn'];
+  		}
+  		get btn(){
+  			return this.getAttribute('btn');
+  		}
+  		set btn(newbtn){
+  			this.setAttribute('btn',newbtn);
+  		}
+
+  		connectedCallback(){
+  			var shadow = this.attachShadow({mode:'open'});
+  			var btn = document.createElement('a');
+  			btn.id="btn_id";
+  			btn.innerHTML="back";
+  			btn.setAttribute('href','HappyTunezWebApp.html');
+            const style = document.createElement('style');
+            style.textContent=`
+            #btn_id{
+               border:none;
+               background:transparent;
+               color:lightgreen;
+               list-style-type:none;
+            }
+            `;
+            shadow.appendChild(style);
+            shadow.appendChild(btn);
+            
+  		}
+
+  		  attributeChangedCallback(button,oldvalue,newvalue){
+            switch(button){
+            	case 'btn':
+            	     if (oldvalue != newvalue) 
+            	     	this.btn = newvalue;
+            	     break;
+            }
+         }
+  	}
+  	  	customElements.define('achievement-back-button', backButton);
+
+  </script>
+</body>
+</html>

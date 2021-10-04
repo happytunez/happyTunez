@@ -1,0 +1,373 @@
+<!--//The Connell Authors, All rights reserved
+// Copyright 2021 The Connell Authors. All rights reserved.
+// Use of this source code is governed by a BSD-style license that can be
+// found in the LICENSE file.
+//The Connell Authors, All rights reserved.
+-->
+
+<!DOCTYPE html>
+<html lang="fr">
+	<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<head>
+	<style type="text/css">
+		body{
+			background: #000006;
+			color: darkorange;
+		}
+		#img{
+			opacity: 0.5;
+		}
+		#default{
+			text-align: center;
+		}
+   .rect1{
+   	opacity: 0.09;
+   	animation: change 5s infinite alternate;
+   }
+.dd{
+	animation: dd 2s infinite;
+	filter: blur(15px);
+
+}
+.dp{
+	animation: dp 2s infinite;
+	filter: blur(10px);
+
+}
+@keyframes dp{
+	from{
+		width:0px;
+transform: translateX(0);
+		
+	}
+	to{
+		width: 100px;
+		transform: translateX(100px);
+
+	}
+}
+@keyframes dd{
+	from{
+		width:0px;
+transform: translateX(0);
+		
+	}
+	to{
+		width: 25px;
+		transform: translateX(25px);
+
+	}
+}
+@keyframes change{
+	0%{
+		background: grey;
+		opacity: 0.09;
+	}
+	20%{
+		background: grey;
+		opacity: 0.07;
+	}
+	40%{
+		background: grey;
+		opacity: 0.05;
+	}
+	60%{
+		background: grey;
+		opacity: 0.07;
+	}
+	80%{
+		background: grey;
+		opacity: 0.09;
+	}
+	100%{
+		background: grey;
+		opacity: 0.09;
+	}
+}
+
+	</style>
+
+	<title>Tab Info</title>
+</head>
+<body id="body">
+
+<tophit-back-button></tophit-back-button>
+
+<script type="text/javascript">
+	// Copyright 2021 The Connell Authors. All rights reserved.
+	var default_page = "No Top Hits Found";
+	var div = document.createElement("div");
+	div.id = "default";
+
+	var img = document.createElement("img");
+	img.src = "";
+	img.alt = "Failed To Load Image";
+	img.style.color="grey";
+	img.id = "img";
+
+	var h2 = document.createElement("h2");
+	h2.innerHTML = default_page;
+	
+	var body = document.getElementById("body");
+	body.appendChild(div);
+	div.appendChild(img);
+	div.appendChild(h2);
+
+class backButton extends HTMLElement{
+  		constructor(){
+  			super();
+  		}
+  		static get observedAttributes(){
+  			return ['btn'];
+  		}
+  		get btn(){
+  			return this.getAttribute('btn');
+  		}
+  		set btn(newbtn){
+  			this.setAttribute('btn',newbtn);
+  		}
+
+  		connectedCallback(){
+  			var shadow = this.attachShadow({mode:'open'});
+  			var btn = document.createElement('a');
+  			btn.id="btn_id";
+  			btn.innerHTML="back";
+  			btn.setAttribute('href','HappyTunezWebApp.html');
+            const style = document.createElement('style');
+            style.textContent=`
+            #btn_id{
+               border:none;
+               background:transparent;
+               color:lightgreen;
+               list-style-type:none;
+            }
+            `;
+            shadow.appendChild(style);
+            shadow.appendChild(btn);
+            
+  		}
+
+  		  attributeChangedCallback(button,oldvalue,newvalue){
+            switch(button){
+            	case 'btn':
+            	     if (oldvalue != newvalue) 
+            	     	this.btn = newvalue;
+            	     break;
+            }
+         }
+  	}
+  	  	customElements.define('tophit-back-button', backButton);
+</script>
+<svg width="200" height="150">
+	<g>
+		<rect x="5" y="5.5" width="0" height="50" fill="grey" class="rect1 dd"/>
+		<rect x="5" y="60.5" width="0" height="10" fill="grey" class="rect1 dp"/>
+		<rect x="5" y="80.5" width="0" height="10" fill="grey" class="rect1 dp"/>
+		<rect x="5" y="100.5" width="0" height="10" fill="grey" class="rect1 dp"/>
+	<rect x="5" y="5" width="50" height="50" fill="grey" class="rect1"/>
+	<rect x="5" y="60" width="200" height="10" fill="grey" class="rect1"/>
+	<rect x="5" y="80" width="200" height="10" fill="grey" class="rect1"/>
+	<rect x="5" y="100" width="200" height="10" fill="grey" class="rect1"/>
+</g>
+</svg>
+
+<svg width="200" height="150">
+	<g>
+		<rect x="5" y="5.5" width="0" height="50" fill="grey" class="rect1 dd"/>
+		<rect x="5" y="60.5" width="0" height="10" fill="grey" class="rect1 dp"/>
+		<rect x="5" y="80.5" width="0" height="10" fill="grey" class="rect1 dp"/>
+		<rect x="5" y="100.5" width="0" height="10" fill="grey" class="rect1 dp"/>
+	<rect x="5" y="5" width="50" height="50" fill="grey" class="rect1"/>
+	<rect x="5" y="60" width="200" height="10" fill="grey" class="rect1"/>
+	<rect x="5" y="80" width="200" height="10" fill="grey" class="rect1"/>
+	<rect x="5" y="100" width="200" height="10" fill="grey" class="rect1"/>
+</g>
+</svg>
+
+<svg width="200" height="150">
+	<g>
+		<rect x="5" y="5.5" width="0" height="50" fill="grey" class="rect1 dd"/>
+		<rect x="5" y="60.5" width="0" height="10" fill="grey" class="rect1 dp"/>
+		<rect x="5" y="80.5" width="0" height="10" fill="grey" class="rect1 dp"/>
+		<rect x="5" y="100.5" width="0" height="10" fill="grey" class="rect1 dp"/>
+	<rect x="5" y="5" width="50" height="50" fill="grey" class="rect1"/>
+	<rect x="5" y="60" width="200" height="10" fill="grey" class="rect1"/>
+	<rect x="5" y="80" width="200" height="10" fill="grey" class="rect1"/>
+	<rect x="5" y="100" width="200" height="10" fill="grey" class="rect1"/>
+</g>
+</svg>
+<svg width="200" height="150">
+	<g>
+		<rect x="5" y="5.5" width="0" height="50" fill="grey" class="rect1 dd"/>
+		<rect x="5" y="60.5" width="0" height="10" fill="grey" class="rect1 dp"/>
+		<rect x="5" y="80.5" width="0" height="10" fill="grey" class="rect1 dp"/>
+		<rect x="5" y="100.5" width="0" height="10" fill="grey" class="rect1 dp"/>
+	<rect x="5" y="5" width="50" height="50" fill="grey" class="rect1"/>
+	<rect x="5" y="60" width="200" height="10" fill="grey" class="rect1"/>
+	<rect x="5" y="80" width="200" height="10" fill="grey" class="rect1"/>
+	<rect x="5" y="100" width="200" height="10" fill="grey" class="rect1"/>
+</g>
+</svg>
+
+<svg width="200" height="150">
+	<g>
+		<rect x="5" y="5.5" width="0" height="50" fill="grey" class="rect1 dd"/>
+		<rect x="5" y="60.5" width="0" height="10" fill="grey" class="rect1 dp"/>
+		<rect x="5" y="80.5" width="0" height="10" fill="grey" class="rect1 dp"/>
+		<rect x="5" y="100.5" width="0" height="10" fill="grey" class="rect1 dp"/>
+	<rect x="5" y="5" width="50" height="50" fill="grey" class="rect1"/>
+	<rect x="5" y="60" width="200" height="10" fill="grey" class="rect1"/>
+	<rect x="5" y="80" width="200" height="10" fill="grey" class="rect1"/>
+	<rect x="5" y="100" width="200" height="10" fill="grey" class="rect1"/>
+</g>
+</svg>
+
+<svg width="200" height="150">
+	<g>
+		<rect x="5" y="5.5" width="0" height="50" fill="grey" class="rect1 dd"/>
+		<rect x="5" y="60.5" width="0" height="10" fill="grey" class="rect1 dp"/>
+		<rect x="5" y="80.5" width="0" height="10" fill="grey" class="rect1 dp"/>
+		<rect x="5" y="100.5" width="0" height="10" fill="grey" class="rect1 dp"/>
+	<rect x="5" y="5" width="50" height="50" fill="grey" class="rect1"/>
+	<rect x="5" y="60" width="200" height="10" fill="grey" class="rect1"/>
+	<rect x="5" y="80" width="200" height="10" fill="grey" class="rect1"/>
+	<rect x="5" y="100" width="200" height="10" fill="grey" class="rect1"/>
+</g>
+</svg>
+<svg width="200" height="150">
+	<g>
+		<rect x="5" y="5.5" width="0" height="50" fill="grey" class="rect1 dd"/>
+		<rect x="5" y="60.5" width="0" height="10" fill="grey" class="rect1 dp"/>
+		<rect x="5" y="80.5" width="0" height="10" fill="grey" class="rect1 dp"/>
+		<rect x="5" y="100.5" width="0" height="10" fill="grey" class="rect1 dp"/>
+	<rect x="5" y="5" width="50" height="50" fill="grey" class="rect1"/>
+	<rect x="5" y="60" width="200" height="10" fill="grey" class="rect1"/>
+	<rect x="5" y="80" width="200" height="10" fill="grey" class="rect1"/>
+	<rect x="5" y="100" width="200" height="10" fill="grey" class="rect1"/>
+</g>
+</svg><svg width="200" height="150">
+	<g>
+		<rect x="5" y="5.5" width="0" height="50" fill="grey" class="rect1 dd"/>
+		<rect x="5" y="60.5" width="0" height="10" fill="grey" class="rect1 dp"/>
+		<rect x="5" y="80.5" width="0" height="10" fill="grey" class="rect1 dp"/>
+		<rect x="5" y="100.5" width="0" height="10" fill="grey" class="rect1 dp"/>
+	<rect x="5" y="5" width="50" height="50" fill="grey" class="rect1"/>
+	<rect x="5" y="60" width="200" height="10" fill="grey" class="rect1"/>
+	<rect x="5" y="80" width="200" height="10" fill="grey" class="rect1"/>
+	<rect x="5" y="100" width="200" height="10" fill="grey" class="rect1"/>
+</g>
+</svg><svg width="200" height="150">
+	<g>
+		<rect x="5" y="5.5" width="0" height="50" fill="grey" class="rect1 dd"/>
+		<rect x="5" y="60.5" width="0" height="10" fill="grey" class="rect1 dp"/>
+		<rect x="5" y="80.5" width="0" height="10" fill="grey" class="rect1 dp"/>
+		<rect x="5" y="100.5" width="0" height="10" fill="grey" class="rect1 dp"/>
+	<rect x="5" y="5" width="50" height="50" fill="grey" class="rect1"/>
+	<rect x="5" y="60" width="200" height="10" fill="grey" class="rect1"/>
+	<rect x="5" y="80" width="200" height="10" fill="grey" class="rect1"/>
+	<rect x="5" y="100" width="200" height="10" fill="grey" class="rect1"/>
+</g>
+</svg><svg width="200" height="150">
+	<g>
+		<rect x="5" y="5.5" width="0" height="50" fill="grey" class="rect1 dd"/>
+		<rect x="5" y="60.5" width="0" height="10" fill="grey" class="rect1 dp"/>
+		<rect x="5" y="80.5" width="0" height="10" fill="grey" class="rect1 dp"/>
+		<rect x="5" y="100.5" width="0" height="10" fill="grey" class="rect1 dp"/>
+	<rect x="5" y="5" width="50" height="50" fill="grey" class="rect1"/>
+	<rect x="5" y="60" width="200" height="10" fill="grey" class="rect1"/>
+	<rect x="5" y="80" width="200" height="10" fill="grey" class="rect1"/>
+	<rect x="5" y="100" width="200" height="10" fill="grey" class="rect1"/>
+</g>
+</svg><svg width="200" height="150">
+	<g>
+		<rect x="5" y="5.5" width="0" height="50" fill="grey" class="rect1 dd"/>
+		<rect x="5" y="60.5" width="0" height="10" fill="grey" class="rect1 dp"/>
+		<rect x="5" y="80.5" width="0" height="10" fill="grey" class="rect1 dp"/>
+		<rect x="5" y="100.5" width="0" height="10" fill="grey" class="rect1 dp"/>
+	<rect x="5" y="5" width="50" height="50" fill="grey" class="rect1"/>
+	<rect x="5" y="60" width="200" height="10" fill="grey" class="rect1"/>
+	<rect x="5" y="80" width="200" height="10" fill="grey" class="rect1"/>
+	<rect x="5" y="100" width="200" height="10" fill="grey" class="rect1"/>
+</g>
+</svg><svg width="200" height="150">
+	<g>
+		<rect x="5" y="5.5" width="0" height="50" fill="grey" class="rect1 dd"/>
+		<rect x="5" y="60.5" width="0" height="10" fill="grey" class="rect1 dp"/>
+		<rect x="5" y="80.5" width="0" height="10" fill="grey" class="rect1 dp"/>
+		<rect x="5" y="100.5" width="0" height="10" fill="grey" class="rect1 dp"/>
+	<rect x="5" y="5" width="50" height="50" fill="grey" class="rect1"/>
+	<rect x="5" y="60" width="200" height="10" fill="grey" class="rect1"/>
+	<rect x="5" y="80" width="200" height="10" fill="grey" class="rect1"/>
+	<rect x="5" y="100" width="200" height="10" fill="grey" class="rect1"/>
+</g>
+</svg><svg width="200" height="150">
+	<g>
+		<rect x="5" y="5.5" width="0" height="50" fill="grey" class="rect1 dd"/>
+		<rect x="5" y="60.5" width="0" height="10" fill="grey" class="rect1 dp"/>
+		<rect x="5" y="80.5" width="0" height="10" fill="grey" class="rect1 dp"/>
+		<rect x="5" y="100.5" width="0" height="10" fill="grey" class="rect1 dp"/>
+	<rect x="5" y="5" width="50" height="50" fill="grey" class="rect1"/>
+	<rect x="5" y="60" width="200" height="10" fill="grey" class="rect1"/>
+	<rect x="5" y="80" width="200" height="10" fill="grey" class="rect1"/>
+	<rect x="5" y="100" width="200" height="10" fill="grey" class="rect1"/>
+</g>
+</svg><svg width="200" height="150">
+	<g>
+		<rect x="5" y="5.5" width="0" height="50" fill="grey" class="rect1 dd"/>
+		<rect x="5" y="60.5" width="0" height="10" fill="grey" class="rect1 dp"/>
+		<rect x="5" y="80.5" width="0" height="10" fill="grey" class="rect1 dp"/>
+		<rect x="5" y="100.5" width="0" height="10" fill="grey" class="rect1 dp"/>
+	<rect x="5" y="5" width="50" height="50" fill="grey" class="rect1"/>
+	<rect x="5" y="60" width="200" height="10" fill="grey" class="rect1"/>
+	<rect x="5" y="80" width="200" height="10" fill="grey" class="rect1"/>
+	<rect x="5" y="100" width="200" height="10" fill="grey" class="rect1"/>
+</g>
+</svg><svg width="200" height="150">
+	<g>
+		<rect x="5" y="5.5" width="0" height="50" fill="grey" class="rect1 dd"/>
+		<rect x="5" y="60.5" width="0" height="10" fill="grey" class="rect1 dp"/>
+		<rect x="5" y="80.5" width="0" height="10" fill="grey" class="rect1 dp"/>
+		<rect x="5" y="100.5" width="0" height="10" fill="grey" class="rect1 dp"/>
+	<rect x="5" y="5" width="50" height="50" fill="grey" class="rect1"/>
+	<rect x="5" y="60" width="200" height="10" fill="grey" class="rect1"/>
+	<rect x="5" y="80" width="200" height="10" fill="grey" class="rect1"/>
+	<rect x="5" y="100" width="200" height="10" fill="grey" class="rect1"/>
+</g>
+</svg><svg width="200" height="150">
+	<g>
+		<rect x="5" y="5.5" width="0" height="50" fill="grey" class="rect1 dd"/>
+		<rect x="5" y="60.5" width="0" height="10" fill="grey" class="rect1 dp"/>
+		<rect x="5" y="80.5" width="0" height="10" fill="grey" class="rect1 dp"/>
+		<rect x="5" y="100.5" width="0" height="10" fill="grey" class="rect1 dp"/>
+	<rect x="5" y="5" width="50" height="50" fill="grey" class="rect1"/>
+	<rect x="5" y="60" width="200" height="10" fill="grey" class="rect1"/>
+	<rect x="5" y="80" width="200" height="10" fill="grey" class="rect1"/>
+	<rect x="5" y="100" width="200" height="10" fill="grey" class="rect1"/>
+</g>
+</svg><svg width="200" height="150">
+	<g>
+		<rect x="5" y="5.5" width="0" height="50" fill="grey" class="rect1 dd"/>
+		<rect x="5" y="60.5" width="0" height="10" fill="grey" class="rect1 dp"/>
+		<rect x="5" y="80.5" width="0" height="10" fill="grey" class="rect1 dp"/>
+		<rect x="5" y="100.5" width="0" height="10" fill="grey" class="rect1 dp"/>
+	<rect x="5" y="5" width="50" height="50" fill="grey" class="rect1"/>
+	<rect x="5" y="60" width="200" height="10" fill="grey" class="rect1"/>
+	<rect x="5" y="80" width="200" height="10" fill="grey" class="rect1"/>
+	<rect x="5" y="100" width="200" height="10" fill="grey" class="rect1"/>
+</g>
+</svg><svg width="200" height="150">
+	<g>
+		<rect x="5" y="5.5" width="0" height="50" fill="grey" class="rect1 dd"/>
+		<rect x="5" y="60.5" width="0" height="10" fill="grey" class="rect1 dp"/>
+		<rect x="5" y="80.5" width="0" height="10" fill="grey" class="rect1 dp"/>
+		<rect x="5" y="100.5" width="0" height="10" fill="grey" class="rect1 dp"/>
+	<rect x="5" y="5" width="50" height="50" fill="grey" class="rect1"/>
+	<rect x="5" y="60" width="200" height="10" fill="grey" class="rect1"/>
+	<rect x="5" y="80" width="200" height="10" fill="grey" class="rect1"/>
+	<rect x="5" y="100" width="200" height="10" fill="grey" class="rect1"/>
+</g>
+</svg>
+</body>
+</html>
