@@ -1,0 +1,451 @@
+<!--//The Connell Authors, All rights reserved
+// Copyright 2021 The Connell Authors. All rights reserved.
+// Use of this source code is governed by a BSD-style license that can be
+// found in the LICENSE file.
+//The Connell Authors, All rights reserved.
+-->
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<style type="text/css">
+	body{
+		background:#06181f;
+		color: lightgreen;
+	}
+	#welcome-div{
+		text-align: center;
+	}
+	#cover-photo-div, img{
+		margin: auto;
+		width: 100%;
+		height: 200px;
+		border: 1.5px solid grey;
+		width: 97%;
+		
+	}
+	#profile-pic-div{
+		margin: auto;
+		width: 30%;
+		height:35em;
+			box-shadow: 2px 3px 4px lightgreen,
+	-2px -3px 4px lightgreen;
+	}
+
+	#none{
+		text-align: center;
+		font-size: 70px;
+		
+	color:grey;
+	opacity:0.2;
+	z-index: -1;
+	}
+	#upload-to-cloud{
+		transition: background 1s ease-in;
+		width: 100%;
+		height: 40px;
+		border:2px solid lightgreen;
+		border-radius: 7px;
+		background: transparent;
+		color: lightgreen;
+	}
+	#upload-to-cloud:hover{
+		background: lightgreen;
+		color: black;
+		border:none;
+	}
+	#live-chat, #create-album, #biography{
+		border: none;
+		background: none;
+	}
+	.t{
+		stroke: lightgreen;
+		stroke-dasharray: 2000;
+		stroke-dashoffset:2000;
+        transition: stroke-dashoffset 5s linear;
+	}
+	.t:hover{
+		stroke-dasharray: 2000;
+		stroke-dashoffset:0;
+	}
+	video{
+		width: 200px;
+		height: 100px;
+	}
+	@media screen and (max-width: 1125px){
+
+	#profile-pic-div{
+		margin: auto;
+		width: 40%;
+		height:35em;
+			box-shadow: 2px 3px 4px lightgreen,
+	-2px -3px 4px lightgreen;
+	}
+
+	}
+	@media screen and (max-width: 1011px){
+
+	#profile-pic-div{
+		margin: auto;
+		width: 41%;
+		height:35em;
+			box-shadow: 2px 3px 4px lightgreen,
+	-2px -3px 4px lightgreen;
+	}
+
+	}
+
+
+	@media screen and (max-width: 1000px){
+
+	#profile-pic-div{
+		margin: auto;
+		width: 42%;
+		height:35em;
+			box-shadow: 2px 3px 4px lightgreen,
+	-2px -3px 4px lightgreen;
+	}
+
+
+	}
+	@media screen and (max-width: 950px){
+
+	#profile-pic-div{
+		margin: auto;
+		width: 44%;
+		height:35em;
+			box-shadow: 2px 3px 4px lightgreen,
+	-2px -3px 4px lightgreen;
+	}
+	
+
+	}
+	@media screen and (max-width: 900px){
+
+	#profile-pic-div{
+		margin: auto;
+		width: 50%;
+		height:35em;
+			box-shadow: 2px 3px 4px lightgreen,
+	-2px -3px 4px lightgreen;
+	}
+	
+
+	}
+		@media screen and (max-width: 827px){
+
+	#profile-pic-div{
+		margin: auto;
+		width: 60%;
+		height:35em;
+			box-shadow: 2px 3px 4px lightgreen,
+	-2px -3px 4px lightgreen;
+	}
+	
+
+	}
+		@media screen and (max-width: 690px){
+
+	#profile-pic-div{
+		margin: auto;
+		width: 70%;
+		height:35em;
+			box-shadow: 2px 3px 4px lightgreen,
+	-2px -3px 4px lightgreen;
+	}
+	
+
+	}
+		@media screen and (max-width: 599px){
+
+	#profile-pic-div{
+		margin: auto;
+		width: 80%;
+		height:35em;
+			box-shadow: 2px 3px 4px lightgreen,
+	-2px -3px 4px lightgreen;
+	}
+	
+
+	}
+		@media screen and (max-width: 516px){
+
+	#profile-pic-div{
+		margin: auto;
+		width: 90%;
+		height:35em;
+			box-shadow: 2px 3px 4px lightgreen,
+	-2px -3px 4px lightgreen;
+	}
+	
+
+	}
+		@media screen and (max-width: 475px){
+
+	#profile-pic-div{
+		margin: auto;
+		width: 100%;
+		height:40em;
+			box-shadow: 2px 3px 4px lightgreen,
+	-2px -3px 4px lightgreen;
+	}
+}
+@media screen and (max-width: 270px){
+	#profile-photo-div{
+		margin: auto;
+		width: 35%;
+		height: 100px;
+		background: transparent;
+		backdrop-filter:blur(15px);
+		position: relative;
+		
+		border-radius: 50%;
+		border:1px solid grey;
+
+	}
+	#profile-pic-div{
+		margin: auto;
+		width: 100%;
+		height:42em;
+			box-shadow: 2px 3px 4px lightgreen,
+	-2px -3px 4px lightgreen;
+	}
+}
+}
+</style>
+	<title>Profile</title>
+</head>
+<body id="body">
+	<profile-back-button></profile-back-button>
+	
+   <div id="welcome-div">
+   	 <h1>Welcome<h1 id="name"></h1></h1>
+<p>Finish setting Up your profile for better experience, start enjoying Happy Tunez now.</p>
+<p style="text-align: left;">You are getting ready to go. just complete the following steps complete your profile<br> Set your prfile pic<a href="#">  set now</a><br>Thats all, your done! Start exploring happy tunez today</p>
+   </div>
+
+   <div id="profile-div">
+   	   	<div id="profile-pic-div">
+   	   		<br>
+   	   	<div id="cover-photo-div">
+   	   			<input id="file" type="file" name="t" accept="image/*">	
+   	   		<h1 id="none">None</h1>
+   	   	</div>
+   	   	<div>
+
+   	   		<h1 style="text-align: center;" id="Name">NAME</h1>
+
+   	   		<small>Followers:     <strong id="followers-info-tag">0</strong></small><small>     Following: <strong id="following-info-tag">0</strong></small><small>    Country: <strong id="country-info-tag"> country</strong></small>
+   	   		<small>  Badges: <strong id="badges-info-tag">0</strong></small>
+   	   		<small>Achievement: <strong id="achievement-info-tag">0</strong></small>
+   	   		<small>Reps: <strong id="reps-info-tag">none</strong></small>
+   	   		<small>Uploads: <strong id="upload-info-tag">none</strong></small>
+   	   		<small>Albulms: <strong id="following-tag">0</strong></small><br><br><br>
+
+   	   		<button id="upload-to-cloud" onclick="showw()">Upload Music To Cloud</button>
+   	   		<input style="display: none;" id="vfile" type="file" name="t" accept="audio/*">	
+
+   	   		<button id="live-chat" onclick="alert('This feature is under construction');">
+   	   			<svg width="100" height="50">
+	      <rect class="t" x="10" y="12" width="75" height="30" fill="transparent" />
+  			<text x="20" y="30" fill="lightgreen">Live Chat</text>
+</svg>
+   	   		</button>
+
+   	   		<button id="create-album" onclick="alert('This feature is under construction');">
+   	   			<svg width="120" height="50">
+	      <rect class="t" x="10" y="12" width="100" height="30" fill="transparent" />
+  			<text x="20" y="30" fill="lightgreen">Create Album</text>
+</svg>
+   	   		</button>
+   	   		<button id="biography" onclick="alert('This feature is under construction');">
+   	   			<svg width="120" height="50">
+	      <rect class="t" x="10" y="12" width="120" height="30" fill="transparent" />
+  			<text x="20" y="30" fill="lightgreen">Add Biography</text>
+</svg>
+   	   		</button>
+   	   	</div>
+
+   	   </div>
+   	  <span id="reputation-div">
+   	  	<h1>Reps</h1>
+   	   <p id="pp"></p>
+   	   <input type="text" name="" id="in" placeholder="name your music" onkeyup="fff();">
+   	  </span>
+   	  <div id="yourUpload">
+   	  	<h1>Your Uploads</h1>
+   	  </div>
+   </div>
+   <script type="text/javascript">
+   	
+   	window.onload = function f() {
+   		// body...
+   	var name = document.getElementById("Name");
+   	var wname = document.getElementById("name");
+   	var storedName = localStorage.getItem('username');
+   	name.innerHTML = storedName;
+   	wname.innerHTML = storedName;
+   	var saudio = localStorage.getItem('uaudio');
+   	var yourUpload = document.getElementById("yourUpload");
+   	yourUpload.innerHTML = saudio;
+
+   	var paudio = localStorage.getItem('paudio');
+   
+   		var newp = document.getElementById("pp");
+   	var inss = document.getElementById('in');
+    inss.style.display="none";
+      var get = localStorage.getItem('yo');
+      newp.innerHTML = get;
+   	}
+
+   	function fff() {
+   		// body...
+   		var newp = document.getElementById("pp");
+   	var inss = document.getElementById('in');
+            newp.innerHTML = inss.value;
+          localStorage.setItem('yo',newp.innerHTML);
+   		
+   	}
+var wdiv = document.getElementById("welcome-div");
+const file =document.getElementById("file");
+const imgPreview =document.getElementById("cover-photo-div");
+
+file.addEventListener("change", function() {
+	// body...
+	getImgData();
+});
+
+function getImgData() {
+	// body...
+	const files = file.files[0];
+	if (files) {
+		const fileReader = new FileReader();
+		fileReader.readAsDataURL(files);
+		fileReader.addEventListener("load", function() {
+			// body... 
+		//	localStorage.setItem('cpic','<img src="' + this.result + '"/>')
+		    wdiv.style.display="none";
+			imgPreview.innerHTML = '<img src="' + this.result + '"/>'
+		     
+		});
+	}
+}
+
+
+//	imgPreview.innerHTML = localStorage.getItem('cpic') ;
+
+var vfi = document.getElementById("vfile");
+var view = document.getElementById("yourUpload");
+vfi.addEventListener("change", function() {
+	// body...
+	getVidData();
+});
+
+function getVidData() {
+	// body...
+	const files = vfi.files[0];
+	if (files) {
+		const fileReader = new FileReader();
+		fileReader.readAsDataURL(files);
+		fileReader.addEventListener("load", function() {
+			// body... 
+		//	localStorage.setItem('cpic','<img src="' + this.result + '"/>')
+			var inss = document.getElementById('in');
+    inss.style.display="block";
+		 var newdiv = document.createElement("div");
+		    var body = document.getElementById("body");
+			newdiv.innerHTML = '<audio controls src="' + this.result + '"></audio';
+			newdiv.setAttribute('id','aud');
+		var auto = document.createElement('div');
+    auto.setAttribute('id','auto');
+			localStorage.setItem('uaudio',newdiv.innerHTML);
+            
+    const style = document.createElement('style');
+    style.textContent = `
+       #auto{
+  margin: auto;
+  height: 120px;
+  box-shadow: 2px 3px 4px rgba(0, 0, 0, 0.4),
+  -2px -3px 4px rgba(255, 255, 255, 0.2);
+  width: 72%;
+}
+      #name{
+        color: lightgreen; 
+        text-align: center
+      }
+      #btn{
+        background: transparent;
+
+  border: 1px solid lightgreen;
+  color: lightgreen;
+  width: 100%;
+  height: 40px;
+      }
+ #aud{
+ 	width:95%;
+ 	height20px;
+ }
+    `; 
+    body.appendChild(style);
+    body.appendChild(auto);
+    
+	  auto.appendChild(newdiv);	   
+          
+		
+		});
+	}
+}
+function showw() {
+	// body...
+	vfi.style.display = "block";
+}
+
+   	class backButton extends HTMLElement{
+  		constructor(){
+  			super();
+  		}
+  		static get observedAttributes(){
+  			return ['btn'];
+  		}
+  		get btn(){
+  			return this.getAttribute('btn');
+  		}
+  		set btn(newbtn){
+  			this.setAttribute('btn',newbtn);
+  		}
+
+  		connectedCallback(){
+  			var shadow = this.attachShadow({mode:'open'});
+  			var btn = document.createElement('a');
+  			btn.id="btn_id";
+  			btn.innerHTML="back";
+  			btn.setAttribute('href','HappyTunezWebApp.html');
+            const style = document.createElement('style');
+            style.textContent=`
+            #btn_id{
+               border:none;
+               background:transparent;
+               color:darkorange;
+               list-style-type:none;
+            }
+            `;
+            shadow.appendChild(style);
+            shadow.appendChild(btn);
+            
+  		}
+
+  		  attributeChangedCallback(button,oldvalue,newvalue){
+            switch(button){
+            	case 'btn':
+            	     if (oldvalue != newvalue) 
+            	     	this.btn = newvalue;
+            	     break;
+            }
+         }
+  	}
+  	  	customElements.define('profile-back-button', backButton);
+   </script>
+</body>
+</html>
